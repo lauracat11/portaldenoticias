@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuariosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,5 @@ use App\Http\Controllers\UsuariosController;
 |
 */
 
-Route::get('/usuarios', [UsuariosController::class, 'getUsuario']);
+Route::get('/login', [UsuarioController::class, 'getUsuario']);
+Route::post('/login/registro', [UsuarioController::class, 'createUsuario']);

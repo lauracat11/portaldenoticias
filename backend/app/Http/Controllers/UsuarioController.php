@@ -13,20 +13,17 @@ class UsuarioController extends Controller
         return $user;
     }
     function createUsuario(Request $request){
-        Usuario::create([
-            "nombre" => $request->nombre,
-            "apellido" => $request->apellido,
-            "correo" => $request->correo,
-            "contraseña" => $request->contraseña,
-        ]
-            
-        );
         $usuario = Usuario::select('id')->where('correo',$request->correo)->get();
-
+        // return $usuario;
+        // return (count($usuario));
         if(count($usuario)>0){
-            return response()->json($usuario[0],201);
+            return response()->json(["message"=>"ya existe un usuario con ese correo"]);
         }else{
-            return response()->json(["message"=>"no se ha podido agregar al jurado"],404);
+            Usuario::create(["nombre" => $request->nombre,"apellido" => $request->apellido,"correo" => $request->correo,"contraseña" => $request->contraseña]);
+            return response()->json(["message"=>"se ha agregado el usuario"]);
         };
+        
+        
+        
     }
 }
