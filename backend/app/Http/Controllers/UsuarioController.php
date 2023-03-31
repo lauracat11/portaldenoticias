@@ -23,7 +23,21 @@ class UsuarioController extends Controller
             return response()->json(["message"=>"se ha agregado el usuario"]);
         };
         
-        
+        function updateUsuario(Request $request){
+            $usuario = Usuario::find('id')->get();
+
+            if($usuario){
+                $usuario->nombre = $request->nombre;
+                $usuario->apellido = $request->apellido;
+                $usuario->correo = $request->correo;
+                $usuario->contraseña = $request->contraseña;
+                $usuario->save();
+                return response()->json(["message"=>"El usuario se ha actualizado correctamente."]);
+
+            }else{
+                return response()->json(["message"=>"No se ha encontrado el usuario."]);
+            }
+        }
         
     }
 }
