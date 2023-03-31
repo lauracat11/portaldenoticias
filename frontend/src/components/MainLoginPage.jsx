@@ -1,9 +1,12 @@
+import React from 'react'
+import LoginPage from '../components/LoginPage'
 
 
-
-const MainLoginPage = (props) => {
+function MainLoginPage() {
   return (
-    <button onClick={props.login}>Login</button>
+    <div>
+      <LoginPage />
+    </div>
   )
 }
 

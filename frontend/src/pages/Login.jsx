@@ -6,8 +6,7 @@ function Login() {
   const [state, setState] = useState('start')
   return (
     <div>Login
-
-      <MainLoginPage login={this.triggerLogin}/>
+      <MainLoginPage/>
     </div>
   )
 }
