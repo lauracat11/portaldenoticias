@@ -12,6 +12,7 @@ class UsuarioController extends Controller
         $user = Usuario::select('*')->where('correo', $request->correo)->get();
         return $user;
     }
+    
     function createUsuario(Request $request){
         $usuario = Usuario::select('id')->where('correo',$request->correo)->get();
         // return $usuario;
@@ -22,9 +23,11 @@ class UsuarioController extends Controller
             Usuario::create(["nombre" => $request->nombre,"apellido" => $request->apellido,"correo" => $request->correo,"contraseña" => $request->contraseña]);
             return response()->json(["message"=>"se ha agregado el usuario"]);
         };
+    }  
         
-        function updateUsuario(Request $request){
-            $usuario = Usuario::find('id')->get();
+    function updateUsuario(Request $request){
+            $usuario = Usuario::find($request->id);
+            // return $usuario;
 
             if($usuario){
                 $usuario->nombre = $request->nombre;
@@ -39,5 +42,5 @@ class UsuarioController extends Controller
             }
         }
         
-    }
+
 }
