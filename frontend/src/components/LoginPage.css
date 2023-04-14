@@ -109,19 +109,19 @@ input:focus {
 /**************************************************/
 
 /* Contenedor Iniciar sesion */
-.sign-in-container {
+.login-container {
 	width: 50%;
 	z-index: 2;
 }
 
-.container.right-panel-active .sign-in-container {
+.container.right-panel-active .login-container {
 	transform: translateX(100%);
 }
 
 /**************************************************/
 
 /* Contenedor Registrarse */
-.sign-up-container {
+.register-container {
 	width: 50%;
 	z-index: 1;
 }
@@ -129,7 +129,7 @@ input:focus {
 /**************************************************/
 
 /* Transiciones */
-.container.right-panel-active .sign-up-container {
+.container.right-panel-active .register-container {
 	transform: translateX(100%);
 	opacity: 1;
 	z-index: 5;

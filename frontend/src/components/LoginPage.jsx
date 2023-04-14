@@ -13,7 +13,7 @@ function MainLoginPage() {
       
       <div class="body">
         <div  className = {isActive ? 'right-panel-active container' : 'container'} id="container">
-          <div class="form-container sign-up-container">
+          <div class="form-container register-container">
             <form action="">
 
               <h1>Register</h1>
@@ -28,7 +28,7 @@ function MainLoginPage() {
              
             </form>
           </div>
-          <div class="form-container sign-in-container">
+          <div class="form-container login-container">
             <form action="">
               <h1>Login</h1>
 
@@ -46,13 +46,13 @@ function MainLoginPage() {
                 <img></img>
                 <h1>Bienvenido</h1>
                 <a>Si todavía no te has registrado, puedes</a> <a>hacerlo para tener una experiencia</a> <a>personalizada y enterarte de todo lo que está pasando.</a>
-                <button onClick={triggerClick} class="btn" id="signIn">Register</button>
+                <button onClick={triggerClick} class="btn" id="register">Register</button>
               </div>
               <div class="overlay-panel overlay-login">
                 <img></img>
                 <h1>Hola de nuevo!</h1>
                 <a></a>
-                <button onClick={triggerClick} class="btn" id="signUp">Login</button>
+                <button onClick={triggerClick} class="btn" id="login">Login</button>
               </div>
             </div>
           </div>
