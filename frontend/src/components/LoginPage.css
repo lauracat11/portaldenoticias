@@ -17,14 +17,14 @@
 h1 {
 	font-size: x-large !important;
 	font-weight: bold !important;
-	margin-bottom: 20px !important;
+	margin-bottom: 10px !important;
 }
 
 a {
 	color: #333333;
 	font-size: 14px;
 	text-decoration: none;
-	margin: 15px;
+	/* margin: 15px; */
 }
 
 /**************************************************/
@@ -36,7 +36,7 @@ button {
 	color: #FFFFFF !important;
 	font-size: 12px;
 	font-weight: bold;
-	margin: 10px !important;
+	margin: 25px !important;
 	padding: 5px 35px !important;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -73,8 +73,8 @@ form {
 
 input {
 	border-bottom: 1px solid #787878;
-	margin: 10px !important;
-	width: 40%;
+	margin: 15px !important;
+	width: 80%;
 }
 
 input:focus {
@@ -88,11 +88,11 @@ input:focus {
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	/* width: 768px !important; */
+	width: 700px !important;
 	max-width: 100%;
 	min-height: 480px;
 }
@@ -102,7 +102,6 @@ input:focus {
 /* Contenedor de los formularios */
 .form-container {
 	position: absolute;
-	top: 0;
 	height: 100%;
 	transition: all 0.6s ease-in-out;
 }
@@ -111,7 +110,6 @@ input:focus {
 
 /* Contenedor Iniciar sesion */
 .sign-in-container {
-	left: 0;
 	width: 50%;
 	z-index: 2;
 }
@@ -124,9 +122,7 @@ input:focus {
 
 /* Contenedor Registrarse */
 .sign-up-container {
-	left: 0;
 	width: 50%;
-	opacity: 0;
 	z-index: 1;
 }
 
@@ -177,9 +173,8 @@ input:focus {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 40px;
+	padding: 40px;
 	text-align: center;
-	top: 0;
 	height: 100%;
 	width: 50%;
 	transform: translateX(0);

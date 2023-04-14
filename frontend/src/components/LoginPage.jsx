@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
 import './LoginPage.css'
-// import './LoginPageJS.js'
 
 function MainLoginPage() {
   const [isActive, setIsActive] = useState(false);
@@ -11,34 +10,34 @@ function MainLoginPage() {
   };
 
     return (
-
+      
       <div class="body">
         <div  className = {isActive ? 'right-panel-active container' : 'container'} id="container">
           <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="">
 
-              <h1>Create Account</h1>
+              <h1>Register</h1>
               
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" required/>
             
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" required/>
             
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" required/>
             
-              <button>Sign Up</button>
+              <button>Register</button>
              
             </form>
           </div>
           <div class="form-container sign-in-container">
-            <form action="#">
-              <h1>Sign in</h1>
+            <form action="">
+              <h1>Login</h1>
 
-              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Email" required/>
             
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" required/>
               
               <a href="">Forgot your password?</a>
-              <button>Sign In</button>
+              <button>Login</button>
             </form>
           </div>
           <div class="overlay-container">
@@ -46,12 +45,14 @@ function MainLoginPage() {
               <div class="overlay-panel overlay-register">
                 <img></img>
                 <h1>Bienvenido</h1>
-                <button onClick={triggerClick} class="btn" id="signIn">Sign up</button>
+                <a>Si todavía no te has registrado, puedes</a> <a>hacerlo para tener una experiencia</a> <a>personalizada y enterarte de todo lo que está pasando.</a>
+                <button onClick={triggerClick} class="btn" id="signIn">Register</button>
               </div>
               <div class="overlay-panel overlay-login">
                 <img></img>
                 <h1>Hola de nuevo!</h1>
-                <button onClick={triggerClick} class="btn" id="signUp">Sign in</button>
+                <a></a>
+                <button onClick={triggerClick} class="btn" id="signUp">Login</button>
               </div>
             </div>
           </div>

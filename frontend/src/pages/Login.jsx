@@ -1,12 +1,12 @@
 import React from 'react'
-import MainLoginPage from '../components/MainLoginPage'
+import LoginPage from '../components/LoginPage'
 import { useState } from 'react'
 
 function Login() {
   const [state, setState] = useState('start')
   return (
     <div>Login
-      <MainLoginPage/>
+      <LoginPage/>
     </div>
   )
 }
