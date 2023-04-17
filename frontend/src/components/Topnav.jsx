@@ -1,7 +1,7 @@
 import React,{useRef,useContext,useState} from 'react'
 import {BrowserRouter as Router, Route, Routes,Navigate, Link} from 'react-router-dom'
 import {FaBars, FaTimes,FaRegNewspaper} from 'react-icons/fa'
-import {contextNews} from '../context/contextNews'
+import {contextNews} from '../context/contextNews';
 import axios from 'axios';
 
 function Topnav() {
@@ -44,9 +44,7 @@ function Topnav() {
     const showNavbar = () =>{
         navRef.current.classList.toggle("responsive_nav");
     }
-    useEffect(()=>{
-        searchNew(e)
-    },[q])
+    
   return (
     <>
     <header>
