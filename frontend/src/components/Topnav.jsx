@@ -1,7 +1,7 @@
-import React,{useRef,useContext,useState} from 'react'
+import React,{useRef,useContext,useState,useEffect} from 'react'
 import {BrowserRouter as Router, Route, Routes,Navigate, Link} from 'react-router-dom'
 import {FaBars, FaTimes,FaRegNewspaper} from 'react-icons/fa'
-import {contextNews} from '../context/contextNews';
+import {contextNews} from '../context/contextNews'
 import axios from 'axios';
 
 function Topnav() {
@@ -31,20 +31,40 @@ function Topnav() {
     ]
 
     const categories = [
-        {category: "Negocios",searcher: "business"},
-        {category: "Deportes",searcher: "sport"},
-        {category: "Politica",searcher: "policy"},
-        {category: "Salud",searcher: "health"},
-        {category: "Arte",searcher: "art"},
-        {category: "Tecnología",searcher: "Technology"},
-        {category: "Mundo",searcher: "World"}
-
+        {
+            category: "Negocios",
+            searcher: "business",
+        },
+        {
+            category: "Deportes",
+            searcher: "sport",
+        },
+        {
+            category: "Politica",
+            searcher: "policy",
+        },
+        {
+            category: "Salud",
+            searcher: "health",
+        },
+        {
+            category: "Arte",
+            searcher: "art",
+        },
+        {
+            category: "Tecnología",
+            searcher: "Technology",
+        },
+        {
+            category: "Mundo",
+            searcher: "World",
+        }
     ]
+
     const navRef = useRef()
     const showNavbar = () =>{
         navRef.current.classList.toggle("responsive_nav");
     }
-    
   return (
     <>
     <header>
