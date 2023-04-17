@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import {contextNews} from '../context/contextNews'
+import {contextNews} from "../context/contextNews"
 function Home() {
   const {news,setnews,API_KEY} = useContext(contextNews)
   return (
