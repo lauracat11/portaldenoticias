@@ -6,7 +6,8 @@ import axios from 'axios';
 
 function Topnav() {
     const {news,setnews,API_KEY} = useContext(contextNews)
-    const [q, setq] = useState("")
+    const [q, setq] = useState()
+
     const searchNew = (event) =>
     {
         event.preventDefault()
@@ -14,6 +15,13 @@ function Topnav() {
         axios.get(StringCall).then((result) => setnews(result.data.articles))
     }
 
+    const searchNewFilter = (event, newSearcher) =>
+    {
+        event.preventDefault()
+        var StringCall = `https://newsapi.org/v2/everything?q=${newSearcher}&apiKey=${API_KEY}`
+        axios.get(StringCall).then((result) => setnews(result.data.articles))
+    }
+    
     const pages = 
     [
         {
@@ -90,8 +98,7 @@ function Topnav() {
     {
         categories?.map((categoria,i)=>(
             <div key={i} className="vl cursor-pointer" style={{width: "10vw"}} onClick={(e)=>{
-                setq(categoria.searcher)
-                searchNew(e)
+                searchNewFilter(e,categoria.searcher)
                 }}>
                 {categoria.category}
             </div>
