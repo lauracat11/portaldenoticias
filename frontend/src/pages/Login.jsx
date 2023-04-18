@@ -1,7 +1,14 @@
 import React from 'react'
+import LoginPage from '../components/LoginPage'
+import { useState } from 'react'
+
 import Modal from '../components/Modal'
 function Login() {
+  const [state, setState] = useState('start')
   return (
+    <div>Login
+      <LoginPage/>
+    </div>
     <>
     <div>Login</div>
     {/* <Modal
