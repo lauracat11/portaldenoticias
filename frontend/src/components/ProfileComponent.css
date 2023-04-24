@@ -4,7 +4,17 @@
     flex-direction: column;
 }
 
-button {
+
+
+.btn_perfil {
+    display: flex;
+    justify-content: center;
+    background-color: #F25151 !important;
+    color: white;
+    border-radius: 5px;
+}
+
+button.btn_tab_perfil {
     font-size: x-large !important;
     margin-left: 100px !important;
     margin-bottom: 50px !important;
@@ -58,11 +68,10 @@ label.btn {
 }
 
 ul.opcion {
-    margin-left: -130% !important;
+    margin-left: -130%;
 }
 
-.opcion li {
-    
+.opcion li{
     line-height: 180%;
 }
 
@@ -81,6 +90,7 @@ ul.opcion {
 }
 
 .opcion .interior {
+    margin-left: 65%;
     display: none;
 }
 

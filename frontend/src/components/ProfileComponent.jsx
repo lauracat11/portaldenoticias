@@ -31,7 +31,7 @@ function ProfilePage() {
         <div className='container'>
             <div className='tabs'>
                 {tabs.map((tab, i) =>
-                    <button key={i} id={tab.id} disabled={Tab === `${tab.id}`} onClick={(triggerTabClick)}>{tab.tabTitle}</button>
+                    <button className='btn_tab_perfil' key={i} id={tab.id} disabled={Tab === `${tab.id}`} onClick={(triggerTabClick)}>{tab.tabTitle}</button>
                 )}
             </div>
 

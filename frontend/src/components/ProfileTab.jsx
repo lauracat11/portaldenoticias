@@ -33,13 +33,15 @@ function ProfilePage() {
                         <input type="checkbox" name="opcion" id="nivel1-1" /><label for="nivel1-1">Cambiar contraseña</label>
                         <ul className='interior'>
                             <li>
-                                <input type="password" name="" id="" />
+                                <input type="password" name="" id="" placeholder='Contraseña Actual'/>
                                 <br />
-                                <input type="password" name="" id="" />
+                                <input type="password" name="" id="" placeholder='Nueva Contraseña'/>
                                 <br />
-                                <input type="password" name="" id="" />
+                                <input type="password" name="" id="" placeholder='Repetir Contraseña'/>
                                 <br />
-                                <button className='btn_perfil' type="submit"></button>                                
+                                <div className='btn_perfil'>
+                                    <button type="submit">Guardar</button>                                
+                                </div>
 
                                 
                             </li>
@@ -54,7 +56,7 @@ function ProfilePage() {
                             <li>
                                 <input type="password" name="" id="" placeholder='Correo'/>
                                 <br />
-                                <button className='btn_perfil' type="submit"></button>                                
+                                <button className='btn_perfil' type="submit"> Restablecer</button>                                
                             </li>
                         </ul>
                     </li>
@@ -69,7 +71,7 @@ function ProfilePage() {
                                 <br />
                                 <input type="password" name="" id="" placeholder='Contraseña'/>
                                 <br />
-                                <button className='btn_perfil' type="submit"></button>                                
+                                <button className='btn_perfil' type="submit">Eliminar</button>                                
                                 
                             </li>
                         </ul>
