@@ -6,6 +6,7 @@ import Modal from '../components/Modal'
 function Login() {
   const [state, setState] = useState('start')
   return (
+    <di>
     <div>Login
       <LoginPage/>
     </div>
@@ -31,6 +32,8 @@ function Login() {
           </div>
         </Modal> */}
         </>
+
+        </di>
   )
 }
 
