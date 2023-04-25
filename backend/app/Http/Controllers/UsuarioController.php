@@ -7,7 +7,6 @@ use App\Models\Usuario;
 
 class UsuarioController extends Controller
 {
-
     function getUsuario(Request $request){
 
         // return $request->correo;
