@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Topnav/>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace={true} />}/>
+        <Route path="/" element={<Navigate to="/about" replace={true} />}/>
         <Route path="*" element={<Navigate to="/" replace={true} />} />
         <Route path='/home' exact element={<Home/>}/>
         <Route path='/about' exact element={<About/>}/>
