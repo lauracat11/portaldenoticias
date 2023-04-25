@@ -19,7 +19,7 @@ function Home() {
       const Arr2 = []
 
       data.forEach((element, key) => {
-      if(key <10)
+      if(key <4)
       {
         Arr1.push(element);
       }else
@@ -36,9 +36,8 @@ function Home() {
   
   return (
   <>
-
-    <div style={{display: "grid", gridTemplateColumns:"repeat(2,1fr)"}}> 
-      <div className="border-r-4 mt-5 overflow-y-hidden" style={{width: "74vw"}}>
+    <div style={{display: "grid", gridTemplateColumns:"repeat(2,1fr)"}} className="overflow-hidden h-screen"> 
+      <div className="border-r-4 mt-5 overflow-hidden border-[#121212]" style={{width: "74vw"}}>
         {ImpNews?.map((Noticia,key)=>(
            <div key={key} className="">
             <div className="flex flex-wrap mb-4"  style={{width: "80vw"}} >
@@ -76,7 +75,7 @@ function Home() {
         ))}
       </div>
 
-      <div className="mt-5 overflow-scroll">
+      <div className="mt-5 overflow-y-scroll">
         <h2 className="font-bold mb-4 text-center" style={{fontSize: "1vw"}}> Últimos Articulos</h2>
         {
           SecNews?.map((SecNoticia,key)=>(
@@ -86,7 +85,7 @@ function Home() {
                 :
                 SecNoticia.urlToImage}
                 />
-                <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style={{backgroundColor: "rgba(0,0,0,0.4)"}}>
+                <div className=" top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-[#F25151]">
                   <div className="flex justify-start items-end h-full">
                     <div className="text-white m-6">
                       <h5 className="font-bold mb-3">{SecNoticia.title}</h5>
