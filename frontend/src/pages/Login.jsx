@@ -11,7 +11,7 @@ function Login() {
       <LoginPage/>
     </div>
     <>
-    <div>Login</div>
+    <div>Login</div>                                                                                                                                                                                                                                          
     {/* <Modal
           VisibilidadModal={VisibilidadModal}
           setVisibilidadModal={setVisibilidadModal}
@@ -24,7 +24,7 @@ function Login() {
                 key={i}
                 className="group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md"
               >
-                <div>{React.createElement(rol?.icon, { size: 20 })}</div>
+                 <div>{React.createElement(rol?.icon, { size: 20 })}</div>
 
                 <h2 className="whitespace-pre duration-500">{rol?.rol}</h2>
               </Link>
