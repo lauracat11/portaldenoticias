@@ -10,7 +10,7 @@ function ProfilePage() {
                 <div className='foto'>
                     <a>imagen</a>
                     <br />
-                    <input type="image" src="" alt=""/>
+                    <input className='' type="image" src="" alt=""/>
                     <label for="foto_perfil" type className='btn'>Guardar foto</label>
                     <input type="file" name="foto_perfil" id="foto_perfil" className='foto_perfil'/>
                 </div>
@@ -33,14 +33,14 @@ function ProfilePage() {
                         <input type="checkbox" name="opcion" id="nivel1-1" /><label for="nivel1-1">Cambiar contraseña</label>
                         <ul className='interior'>
                             <li>
-                                <input type="password" name="" id="" placeholder='Contraseña Actual'/>
+                                <input className='contraseña' type="password" name="" id="" placeholder='Contraseña Actual'/>
                                 <br />
-                                <input type="password" name="" id="" placeholder='Nueva Contraseña'/>
+                                <input className='contraseña' type="password" name="" id="" placeholder='Nueva Contraseña'/>
                                 <br />
-                                <input type="password" name="" id="" placeholder='Repetir Contraseña'/>
+                                <input className='contraseña' type="password" name="" id="" placeholder='Repetir Contraseña'/>
                                 <br />
-                                <div className='btn_perfil'>
-                                    <button type="submit">Guardar</button>                                
+                                <div>
+                                    <button className='btn_perfil' type="submit">Guardar</button>                                
                                 </div>
 
                                 
@@ -56,7 +56,10 @@ function ProfilePage() {
                             <li>
                                 <input type="password" name="" id="" placeholder='Correo'/>
                                 <br />
-                                <button className='btn_perfil' type="submit"> Restablecer</button>                                
+                                <div>
+                                    <button className='btn_perfil' type="submit"> Restablecer</button>
+                                </div>
+                                                              
                             </li>
                         </ul>
                     </li>
@@ -71,8 +74,9 @@ function ProfilePage() {
                                 <br />
                                 <input type="password" name="" id="" placeholder='Contraseña'/>
                                 <br />
-                                <button className='btn_perfil' type="submit">Eliminar</button>                                
-                                
+                                <div>
+                                    <button className='btn_perfil' type="submit">Eliminar</button>
+                                </div>
                             </li>
                         </ul>
                     </li>

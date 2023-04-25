@@ -7,11 +7,10 @@
 
 
 .btn_perfil {
-    display: flex;
-    justify-content: center;
     background-color: #F25151 !important;
     color: white;
     border-radius: 5px;
+    width: 7em;
 }
 
 button.btn_tab_perfil {
@@ -92,8 +91,10 @@ ul.opcion {
 .opcion .interior {
     margin-left: 65%;
     display: none;
+    justify-content: center;
+    align-content: center;
 }
 
 .opcion input:checked ~ ul {
-    display: block;
+    display: flex;
 }
