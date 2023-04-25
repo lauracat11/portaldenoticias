@@ -7,8 +7,8 @@ use App\Models\Usuario;
 
 class UsuarioController extends Controller
 {
-    function getUsuario(Request $request)
-    {
+    function getUsuario(Request $request){
+
         // return $request->correo;
         $user = Usuario::select('*')->where('correo', $request->correo)->get();
         return $user;
