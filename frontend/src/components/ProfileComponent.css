@@ -1,0 +1,99 @@
+.container {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.btn_perfil {
+    display: flex;
+    justify-content: center;
+    background-color: #F25151 !important;
+    color: white;
+    border-radius: 5px;
+}
+
+button.btn_tab_perfil {
+    font-size: x-large !important;
+    margin-left: 100px !important;
+    margin-bottom: 50px !important;
+    text-transform: uppercase !important;
+}
+
+button:disabled, button [disabled]{
+    font-size: x-large !important;
+    border-bottom: 3px solid black;
+}
+
+.foto {
+    width: 250px;
+}
+.foto_perfil {
+    visibility: hidden;
+}
+
+input {
+    border-bottom: 2px solid #939393;
+    outline: none;
+    margin-bottom: 20px !important;
+}
+
+input:focus {
+    border-bottom: 2px solid #000000;
+}
+
+input.nombre {
+    margin-right: 30px;
+}
+
+.correo {
+    width: 250px;
+}
+
+label.btn {
+    border-radius: 5px;
+    color: white;
+    background: #F25151;
+    padding: 5px;
+}
+
+.columnas {
+    display: flex;
+    flex-wrap: initial;
+};
+
+.opcion * {
+    list-style: none;
+}
+
+ul.opcion {
+    margin-left: -130%;
+}
+
+.opcion li{
+    line-height: 180%;
+}
+
+.opcion input[name="opcion"] {
+    position: absolute;
+    left: -1000em;
+}
+
+.opcion label::before {
+    content:"\025b8";
+    margin-right: 4px;
+}
+
+.opcion input:checked ~ label:before {
+    content:"\025be";
+}
+
+.opcion .interior {
+    margin-left: 65%;
+    display: none;
+}
+
+.opcion input:checked ~ ul {
+    display: block;
+}

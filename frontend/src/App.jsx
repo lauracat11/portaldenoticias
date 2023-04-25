@@ -6,6 +6,8 @@ import Topnav from './components/Topnav'
 import About from '../src/pages/About'
 import Home from '../src/pages/Home'
 import Login from '../src/pages/Login'
+import Profile from '../src/pages/Profile'
+
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
         <Route path='/home' exact element={<Home/>}/>
         <Route path='/about' exact element={<About/>}/>
         <Route path='/login' exact element={<Login/>}/>
+        <Route path='/Profile' exact element={<Profile/>}/>
+
       </Routes>
     </Router>
     
