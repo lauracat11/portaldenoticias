@@ -104,20 +104,20 @@ function Topnav() {
             </div>
         ))
     }
-    <div class="">
+    <div className="">
         <form>
-            <div class="px-5">
-            <div class="flex space-x-4 h-10">
-                <div class="flex rounded-md overflow-hidden">
-                <input type="text" class="w-full rounded-md rounded-r-none text-black" placeholder=' Buscar noticia' 
+            <div className="px-5">
+            <div className="flex space-x-4 h-10"  style={{height: "2vw"}}>
+                <div className="flex rounded-md overflow-hidden">
+                <input style={{fontSize:"1.3vw"}} type="text" className="w-full px-2 rounded-md rounded-r-none text-black" placeholder=' Buscar noticia' 
                 onChange={
                     (e)=>{e.preventDefault()
                     setq(e.target.value)
                 }}/>
-                <button class="bg-indigo-600 text-white px-6 text-lg font-semibold rounded-r-md" 
+                <button style={{fontSize:"1.3vw", alignItems:'center'}} className="bg-[#121212] text-white px-6 text-lg font-semibold rounded-r-md" 
                 onClick={(e)=>{
                     searchNew(e)
-                }}>Go</button>
+                }}>Buscar</button>
                 </div>
             </div>
             </div>
