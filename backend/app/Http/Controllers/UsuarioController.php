@@ -55,4 +55,10 @@ class UsuarioController extends Controller
             return response()->json(["message" => "No se ha encontrado el usuario."]);
         }
     }
+
+
+    public function allUsers(){
+        $usuarios = Usuario::all();
+        return $usuarios;
+    }
 }
