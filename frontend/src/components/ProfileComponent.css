@@ -1,12 +1,20 @@
+.body_perfil {
+    display: flex;
+    justify-content: center;
+    /* background-color: #F25151; */
+
+}
+
 .container {
+    background-color: white;
     display: inline-flex;
     align-items: center;
     flex-direction: column;
 }
 
-
-
 .btn_perfil {
+    display: flex;
+    justify-content: center;
     background-color: #F25151 !important;
     color: white;
     border-radius: 5px;
@@ -14,14 +22,14 @@
 }
 
 button.btn_tab_perfil {
-    font-size: x-large !important;
-    margin-left: 100px !important;
-    margin-bottom: 50px !important;
-    text-transform: uppercase !important;
+    font-size: x-large ;
+    margin-left: 100px ;
+    margin-bottom: 50px ;
+    text-transform: uppercase ;
 }
 
-button:disabled, button [disabled]{
-    font-size: x-large !important;
+button.btn_tab_perfil:disabled, button.btn_tab_perfil [disabled]{
+    font-size: x-large ;
     border-bottom: 3px solid black;
 }
 
@@ -32,22 +40,21 @@ button:disabled, button [disabled]{
     visibility: hidden;
 }
 
-input {
+.input_perfil {
     border-bottom: 2px solid #939393;
     outline: none;
-    margin-bottom: 20px !important;
+    margin-bottom: 6%;
 }
 
-input:focus {
+.input_perfil:focus {
     border-bottom: 2px solid #000000;
 }
 
-input.nombre {
+.input_perfil {
     margin-right: 30px;
-}
-
-.correo {
+    padding-left: 2.5%;
     width: 250px;
+
 }
 
 label.btn {
@@ -60,14 +67,40 @@ label.btn {
 .columnas {
     display: flex;
     flex-wrap: initial;
+    margin-top: 7%
 };
+
+
 
 .opcion * {
     list-style: none;
 }
 
+.opcion {
+    padding-bottom: 10%;
+}
+
+.columnas2 {
+    margin-top: 10%;
+}
+
+.input_perfil2 {
+    border-bottom: 2px solid #939393;
+    outline: none;
+    margin-bottom: 6%;
+}
+
+.input_perfil2:focus {
+    border-bottom: 2px solid #000000;
+}
+
+.input_perfil2 {
+    padding-left: 5%;
+    width: 250px;
+}
+
 ul.opcion {
-    margin-left: -130%;
+    margin-left: -97%;
 }
 
 .opcion li{
@@ -76,15 +109,19 @@ ul.opcion {
 
 .opcion input[name="opcion"] {
     position: absolute;
-    left: -1000em;
+    visibility: hidden;
 }
 
-.opcion label::before {
+.label_opcion {
+    font-size: 25px;
+}
+
+.opcion .label_opcion::before {
     content:"\025b8";
     margin-right: 4px;
 }
 
-.opcion input:checked ~ label:before {
+.opcion input:checked ~ .label_opcion:before {
     content:"\025be";
 }
 
@@ -95,6 +132,6 @@ ul.opcion {
     align-content: center;
 }
 
-.opcion input:checked ~ ul {
+.opcion input:checked ~ .interior {
     display: flex;
 }
