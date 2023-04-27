@@ -3,7 +3,7 @@ import ProfileComponent from '../components/ProfileComponent'
 
 function Profile() {
   return (
-    <div>Profile
+    <div>
         <div><ProfileComponent/></div>
     </div>
   )

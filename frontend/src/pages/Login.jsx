@@ -7,11 +7,11 @@ function Login() {
   const [state, setState] = useState('start')
   return (
     <di>
-    <div>Login
+    <div>
       <LoginPage/>
     </div>
     <>
-    <div>Login</div>                                                                                                                                                                                                                                          
+    {/* <div>Login</div>                                                                                                                                                                                                                                           */}
     {/* <Modal
           VisibilidadModal={VisibilidadModal}
           setVisibilidadModal={setVisibilidadModal}
