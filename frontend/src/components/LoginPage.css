@@ -9,19 +9,19 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Baskervville', sans-serif !important;
+	font-family: 'Baskervville', sans-serif ;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
 
-h1 {
-	font-size: x-large !important;
-	font-weight: bold !important;
-	margin-bottom: 10px !important;
+.h1a {
+	font-size: x-large ;
+	font-weight: bold ;
+	margin-bottom: 10px ;
 }
 
-a {
-	color: #333333;
+.a {
+	color: #ffffff;
 	font-size: 14px;
 	text-decoration: none;
 	/* margin: 15px; */
@@ -30,24 +30,24 @@ a {
 /**************************************************/
 
 /* CSS botones formulario */
-button {
+.btn_login {
 	border-radius: 10px;
-	background-color: #F25151 !important;
-	color: #FFFFFF !important;
+	background-color: #F25151 ;
+	color: #FFFFFF ;
 	font-size: 12px;
 	font-weight: bold;
-	margin: 25px !important;
-	padding: 5px 35px !important;
+	margin: 25px ;
+	padding: 10px 35px ;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.btn_login:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.btn_login:focus {
 	outline: none;
 }
 
@@ -60,7 +60,7 @@ button.btn {
 /**************************************************/
 
 /* Formulario y sus inputs */
-form {
+.formulario {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -71,13 +71,13 @@ form {
 	text-align: center;
 }
 
-input {
+.input_login {
 	border-bottom: 1px solid #787878;
-	margin: 15px !important;
+	margin: 15px ;
 	width: 80%;
 }
 
-input:focus {
+.input_login:focus {
 	outline: none;
 	border-bottom: 2px solid #000000;
 }
@@ -85,14 +85,13 @@ input:focus {
 /**************************************************/
 
 /* Contenedor general */
-.container {
+.container_principal {
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	/* width: 768px !important; */
-	width: 700px !important;
+	width: 700px;
 	max-width: 100%;
 	min-height: 480px;
 }
@@ -114,7 +113,7 @@ input:focus {
 	z-index: 2;
 }
 
-.container.right-panel-active .login-container {
+.container_principal.right-panel-active .login-container {
 	transform: translateX(100%);
 }
 
@@ -129,7 +128,7 @@ input:focus {
 /**************************************************/
 
 /* Transiciones */
-.container.right-panel-active .register-container {
+.container_principal.right-panel-active .register-container {
 	transform: translateX(100%);
 	opacity: 1;
 	z-index: 5;
@@ -147,7 +146,7 @@ input:focus {
 	z-index: 100;
 }
 
-.container.right-panel-active .overlay-container{
+.container_principal.right-panel-active .overlay-container{
 	transform: translateX(-100%);
 }
 
@@ -163,7 +162,7 @@ input:focus {
 	transition: transform 0.6s ease-in-out;
 }
 
-.container.right-panel-active .overlay {
+.container_principal.right-panel-active .overlay {
   	transform: translateX(50%);
 }
 
@@ -185,7 +184,7 @@ input:focus {
 	transform: translateX(-20%);
 }
 
-.container.right-panel-active .overlay-login {
+.container_principal.right-panel-active .overlay-login {
 	transform: translateX(0);
 }
 
@@ -194,6 +193,6 @@ input:focus {
 	transform: translateX(0);
 }
 
-.container.right-panel-active .overlay-register {
+.container_principal.right-panel-active .overlay-register {
 	transform: translateX(20%);
 }

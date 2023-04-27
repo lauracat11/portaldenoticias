@@ -102,7 +102,7 @@ function Topnav() {
                         </div>
                     ))
                 }
-                {/* <div className="">
+                <div className="">
                     <form>
                         <div className="px-5">
                             <div className="flex space-x-4 h-10" style={{ height: "2vw" }}>
@@ -121,7 +121,7 @@ function Topnav() {
                             </div>
                         </div>
                     </form>
-                </div> */}
+                </div>
             </div>
             {/* ////////// */}
         </>
