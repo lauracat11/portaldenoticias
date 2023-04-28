@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileComponent from '../components/ProfileComponent'
 
+
 function Profile() {
   return (
     <div>

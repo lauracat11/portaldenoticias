@@ -1,8 +1,12 @@
 .body_perfil {
     display: flex;
     justify-content: center;
-    /* background-color: #F25151; */
+    background-color: #F25151;
 
+}
+
+.tabs {
+    margin-top: 1em;
 }
 
 .container {
@@ -12,9 +16,77 @@
     flex-direction: column;
 }
 
-.btn_perfil {
+.formulario_cs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn_cs {
+    border-radius: 5px;
+    margin: 2em;
+    margin-top: 3em;
+    padding: 2px;
+    width: 6em;
+    background-color: #F25151 !important;
+    color: white;
+}
+
+.info_usuario {
+    padding-left: 5em;
+}
+
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .imagen_perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .foto .file {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0 15px 0;
+  }
+  
+  .archivo {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+
+
+.btn_info_perfil {
+
+    background-color: #F25151 !important;
+    color: white;
+    border-radius: 5px;
+    width: 15em;
+}
+
+
+
+.div_btn {
     display: flex;
     justify-content: center;
+}
+
+.btn_perfil {
+
     background-color: #F25151 !important;
     color: white;
     border-radius: 5px;
@@ -31,13 +103,6 @@ button.btn_tab_perfil {
 button.btn_tab_perfil:disabled, button.btn_tab_perfil [disabled]{
     font-size: x-large ;
     border-bottom: 3px solid black;
-}
-
-.foto {
-    width: 250px;
-}
-.foto_perfil {
-    visibility: hidden;
 }
 
 .input_perfil {
@@ -67,7 +132,8 @@ label.btn {
 .columnas {
     display: flex;
     flex-wrap: initial;
-    margin-top: 7%
+    margin-top: 7%;
+    margin-left: 6em;
 };
 
 
@@ -87,16 +153,13 @@ label.btn {
 .input_perfil2 {
     border-bottom: 2px solid #939393;
     outline: none;
-    margin-bottom: 6%;
+    margin-bottom: 15%;
+    padding-left: 5%;
+    width: 250px;
 }
 
 .input_perfil2:focus {
     border-bottom: 2px solid #000000;
-}
-
-.input_perfil2 {
-    padding-left: 5%;
-    width: 250px;
 }
 
 ul.opcion {
@@ -105,6 +168,7 @@ ul.opcion {
 
 .opcion li{
     line-height: 180%;
+    margin-bottom: 2em;
 }
 
 .opcion input[name="opcion"] {
@@ -114,6 +178,10 @@ ul.opcion {
 
 .label_opcion {
     font-size: 25px;
+}
+
+.contenido_label_opcion {
+    border-bottom: 2px solid black;
 }
 
 .opcion .label_opcion::before {
@@ -126,6 +194,7 @@ ul.opcion {
 }
 
 .opcion .interior {
+    padding-top: 2em;
     margin-left: 65%;
     display: none;
     justify-content: center;

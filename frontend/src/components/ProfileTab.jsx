@@ -7,11 +7,11 @@ function ProfilePage() {
         <div className='container'>
             <div className='columnas'>
                 <div className='foto'>
-                    <a>imagen</a>
-                    <br />
-                    <input className='imagen_perfil' type="image" src="" alt=""/>
-                    <label for="foto_perfil" type className='btn'>Guardar foto</label>
-                    <input type="file" name="foto_perfil" id="foto_perfil" className='foto_perfil'/>
+                    <img className='imagen_perfil' src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Cambiar foto
+                        <input className='archivo' type="file" name="file" />
+                    </div>                    
                 </div>
                 
                 <div className='info_usuario'>
@@ -21,6 +21,9 @@ function ProfilePage() {
                     <input className='input_perfil' type="email" name="" id="" placeholder='Correo'/>
                     <br />
                     <input className='input_perfil'  type="tel" name="" id="" placeholder='Telefono'/>
+                    <div className='div_btn'>
+                        <button className='btn_info_perfil' type="submit">Guardar</button>                                
+                    </div>
                 </div>
                 
             </div>
@@ -29,7 +32,7 @@ function ProfilePage() {
 
                 <ul className='opcion'>
                     <li>
-                        <input type="checkbox" name="opcion" id="nivel1-1" /><label className='label_opcion' for="nivel1-1">Cambiar contraseña</label>
+                        <input type="checkbox" name="opcion" id="nivel1-1" /><label className='label_opcion' for="nivel1-1"><a className='contenido_label_opcion'>Cambiar contraseña</a></label>
                         <ul className='interior'>
                             <li>
                                 <input className='input_perfil2' type="password" name="" id="" placeholder='Contraseña Actual'/>
@@ -38,7 +41,7 @@ function ProfilePage() {
                                 <br />
                                 <input className='input_perfil2' type="password" name="" id="" placeholder='Repetir Contraseña'/>
                                 <br />
-                                <div>
+                                <div className='div_btn'>
                                     <button className='btn_perfil' type="submit">Guardar</button>                                
                                 </div>
 
@@ -50,30 +53,14 @@ function ProfilePage() {
                 
                 <ul className='opcion'>
                     <li>
-                        <input type="checkbox" name="opcion" id="nivel1-2" /><label className='label_opcion' for="nivel1-2">Restablecer contraseña</label>
-                        <ul className='interior'>
-                            <li>
-                                <input className='input_perfil2' type="password" name="" id="" placeholder='Correo'/>
-                                <br />
-                                <div>
-                                    <button className='btn_perfil' type="submit"> Restablecer</button>
-                                </div>
-                                                              
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <ul className='opcion'>
-                    <li>
-                        <input type="checkbox" name="opcion" id="nivel1-3" /><label className='label_opcion' for="nivel1-3">Eliminar cuenta</label>
+                        <input type="checkbox" name="opcion" id="nivel1-3" /><label className='label_opcion' for="nivel1-3"><a className='contenido_label_opcion'>Eliminar cuenta</a></label>
                         <ul className='interior'>
                             <li>
                                 <input className='input_perfil2' type="email" name="" id="" placeholder='Correo'/>
                                 <br />
                                 <input className='input_perfil2' type="password" name="" id="" placeholder='Contraseña'/>
                                 <br />
-                                <div>
+                                <div className='div_btn'>
                                     <button className='btn_perfil' type="submit">Eliminar</button>
                                 </div>
                             </li>
