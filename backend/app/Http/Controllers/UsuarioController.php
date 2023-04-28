@@ -4,17 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class UsuarioController extends Controller
 {
-    function getUsuario(Request $request){
+    public function getUsuario(Request $request){
 
         // return $request->correo;
         $user = Usuario::select('*')->where('correo', $request->correo)->get();
-        return $user;
+        $password = Usuario::select('contraseña')->where('correo', $request->correo)->get();
+        
+        // return $request->contraseña;
+        return $password->contraseña;
+
+        if($password == $request->contraseña){
+            return $user;
+        }else{
+            return response()->json(["message" => "Contraseña incorrecta"]);
+        }
+    
     }
 
-    function createUsuario(Request $request)
+    public function createUsuario(Request $request)
     {
         $usuario = Usuario::select('id')->where('correo', $request->correo)->get();
         // return $usuario;
@@ -27,7 +39,7 @@ class UsuarioController extends Controller
         };
     }
 
-    function updateUsuario(Request $request)
+    public function updateUsuario(Request $request)
     {
         $usuario = Usuario::find($request->id);
         // return $usuario;
@@ -44,7 +56,7 @@ class UsuarioController extends Controller
         }
     }
 
-    function deleteUsuario(Request $request){
+    public function deleteUsuario(Request $request){
         $usuario= Usuario::find($request->id);
         // return $usuario;
 

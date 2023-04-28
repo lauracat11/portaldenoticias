@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [UsuarioController::class, 'getUsuario']);
+Route::post('/login', [UsuarioController::class, 'getUsuario']);
 Route::post('/login/registro', [UsuarioController::class, 'createUsuario']);
 Route::put('/configuracion', [UsuarioController::class, 'updateUsuario']);
 Route::delete('/delete', [UsuarioController::class, 'deleteUsuario']);

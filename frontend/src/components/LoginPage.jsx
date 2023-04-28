@@ -15,49 +15,68 @@ function MainLoginPage() {
   const [pwsUser, setPwsUser] = useState('');
   const [lastnameUser, setLastnameUser] = useState('');
 
-    async function postNewUser(e) {
-      e.preventDefault();
-      console.log("enviando");
-      await fetch(`${endpoint}/login/registro`, {method: 'POST', headers: {'Content-Type': 'application/json'},
+  const [emailLogin, setEmailLogin] = useState('');
+  const [pwsLogin, setPwsLogin] = useState('');
+
+  async function newUser(e) {
+    e.preventDefault();
+    console.log("enviando");
+    await fetch(`${endpoint}/login/registro`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-          nombre: nameUser,
-          apellido: lastnameUser,
-          correo: emailUser,
-          contraseña: pwsUser,
+        nombre: nameUser,
+        apellido: lastnameUser,
+        correo: emailUser,
+        contraseña: pwsUser,
       })
-  })
-  .then(data => data.json())
-  .then(data =>  { 
-      console.log(data)});
+    })
+      .then(data => data.json())
+      .then(data => {
+        console.log(data)
+      });
+  }
+
+  async function loginUser(e) {
+    e.preventDefault();
+    console.log("enviando");
+    const response = await fetch(`${endpoint}/login`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        correo: emailLogin
+        // contraseña: pwsLogin,
+      })
+    })
+      .then(data => data.json())
+      console.log(response);
   }
   return (
 
     <div class="body">
       <div className={isActive ? 'right-panel-active container_principal' : 'container_principal'} id="container">
         <div class="form-container register-container">
-          <form className='formulario' onSubmit={postNewUser}>
+          <form className='formulario' onSubmit={newUser}>
 
             <h1 className='h1a'>Registrarse</h1>
 
-            <input className='input_login' type="text" placeholder="Nombre" required value={nameUser} onChange={(e)=>setNameUser(e.target.value)} />
+            <input className='input_login' type="text" placeholder="Nombre" required value={nameUser} onChange={(e) => setNameUser(e.target.value)} />
 
-            <input className='input_login' type="text" placeholder="Apellido" required value={lastnameUser} onChange={(e)=>setLastnameUser(e.target.value)} />
+            <input className='input_login' type="text" placeholder="Apellido" required value={lastnameUser} onChange={(e) => setLastnameUser(e.target.value)} />
 
-            <input className='input_login' type="email" placeholder="Correo" required  value={emailUser} onChange={(e)=>setEmailUser(e.target.value)}/>
+            <input className='input_login' type="email" placeholder="Correo" required value={emailUser} onChange={(e) => setEmailUser(e.target.value)} />
 
-            <input className='input_login' type="password" placeholder="Contraseña" required value={pwsUser} onChange={(e)=>setPwsUser(e.target.value)}/>
+            <input className='input_login' type="password" placeholder="Contraseña" required value={pwsUser} onChange={(e) => setPwsUser(e.target.value)} />
 
             <button className='btn_login'>Registrarse</button>
 
           </form>
         </div>
         <div class="form-container login-container">
-          <form className='formulario' action="">
+          <form className='formulario' onSubmit={loginUser}>
             <h1 className='h1a'>Iniciar sesion</h1>
 
-            <input className='input_login' type="text" placeholder="Correo" required />
+            <input className='input_login' type="text" placeholder="Correo" required value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)}/>
 
-            <input className='input_login' type="password" placeholder="Contraseña" required />
+            <input className='input_login' type="password" placeholder="Contraseña" required value={pwsLogin} onChange={(e) => setPwsLogin(e.target.value)} />
 
             <a className='a' href="">Has olvidado tu contraseña?</a>
             <button className='btn_login'>Iniciar sesion</button>
