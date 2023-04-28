@@ -9,22 +9,43 @@ function MainLoginPage() {
     setIsActive(current => !current);
   };
 
+  const endpoint = "http://127.0.0.1:8000/api";
+  const [emailUser, setEmailUser] = useState('');
+  const [nameUser, setNameUser] = useState('');
+  const [pwsUser, setPwsUser] = useState('');
+  const [lastnameUser, setLastnameUser] = useState('');
+
+    async function postNewUser(e) {
+      e.preventDefault();
+      console.log("enviando");
+      await fetch(`${endpoint}/login/registro`, {method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+          nombre: nameUser,
+          apellido: lastnameUser,
+          correo: emailUser,
+          contraseña: pwsUser,
+      })
+  })
+  .then(data => data.json())
+  .then(data =>  { 
+      console.log(data)});
+  }
   return (
 
     <div class="body">
       <div className={isActive ? 'right-panel-active container_principal' : 'container_principal'} id="container">
         <div class="form-container register-container">
-          <form className='formulario' action="">
+          <form className='formulario' onSubmit={postNewUser}>
 
             <h1 className='h1a'>Registrarse</h1>
 
-            <input className='input_login' type="text" placeholder="Nombre" required />
+            <input className='input_login' type="text" placeholder="Nombre" required value={nameUser} onChange={(e)=>setNameUser(e.target.value)} />
 
-            <input className='input_login' type="text" placeholder="Apellido" required />
+            <input className='input_login' type="text" placeholder="Apellido" required value={lastnameUser} onChange={(e)=>setLastnameUser(e.target.value)} />
 
-            <input className='input_login' type="email" placeholder="Correo" required />
+            <input className='input_login' type="email" placeholder="Correo" required  value={emailUser} onChange={(e)=>setEmailUser(e.target.value)}/>
 
-            <input className='input_login' type="password" placeholder="Contraseña" required />
+            <input className='input_login' type="password" placeholder="Contraseña" required value={pwsUser} onChange={(e)=>setPwsUser(e.target.value)}/>
 
             <button className='btn_login'>Registrarse</button>
 
