@@ -1,54 +1,125 @@
+.body_perfil {
+    display: flex;
+    justify-content: center;
+    background-color: #F25151;
+
+}
+
+.tabs {
+    margin-top: 1em;
+}
+
 .container {
+    background-color: white;
     display: inline-flex;
     align-items: center;
     flex-direction: column;
 }
 
-
-
-.btn_perfil {
+.formulario_cs {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn_cs {
+    border-radius: 5px;
+    margin: 2em;
+    margin-top: 3em;
+    padding: 2px;
+    width: 6em;
     background-color: #F25151 !important;
     color: white;
-    border-radius: 5px;
 }
 
-button.btn_tab_perfil {
-    font-size: x-large !important;
-    margin-left: 100px !important;
-    margin-bottom: 50px !important;
-    text-transform: uppercase !important;
-}
-
-button:disabled, button [disabled]{
-    font-size: x-large !important;
-    border-bottom: 3px solid black;
+.info_usuario {
+    padding-left: 5em;
 }
 
 .foto {
-    width: 250px;
-}
-.foto_perfil {
-    visibility: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .imagen_perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .foto .file {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0 15px 0;
+  }
+  
+  .archivo {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+
+
+.btn_info_perfil {
+
+    background-color: #F25151 !important;
+    color: white;
+    border-radius: 5px;
+    width: 15em;
 }
 
-input {
+
+
+.div_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn_perfil {
+
+    background-color: #F25151 !important;
+    color: white;
+    border-radius: 5px;
+    width: 7em;
+}
+
+button.btn_tab_perfil {
+    font-size: x-large ;
+    margin-left: 100px ;
+    margin-bottom: 50px ;
+    text-transform: uppercase ;
+}
+
+button.btn_tab_perfil:disabled, button.btn_tab_perfil [disabled]{
+    font-size: x-large ;
+    border-bottom: 3px solid black;
+}
+
+.input_perfil {
     border-bottom: 2px solid #939393;
     outline: none;
-    margin-bottom: 20px !important;
+    margin-bottom: 6%;
 }
 
-input:focus {
+.input_perfil:focus {
     border-bottom: 2px solid #000000;
 }
 
-input.nombre {
+.input_perfil {
     margin-right: 30px;
-}
-
-.correo {
+    padding-left: 2.5%;
     width: 250px;
+
 }
 
 label.btn {
@@ -61,39 +132,75 @@ label.btn {
 .columnas {
     display: flex;
     flex-wrap: initial;
+    margin-top: 7%;
+    margin-left: 6em;
 };
+
+
 
 .opcion * {
     list-style: none;
 }
 
+.opcion {
+    padding-bottom: 10%;
+}
+
+.columnas2 {
+    margin-top: 10%;
+}
+
+.input_perfil2 {
+    border-bottom: 2px solid #939393;
+    outline: none;
+    margin-bottom: 15%;
+    padding-left: 5%;
+    width: 250px;
+}
+
+.input_perfil2:focus {
+    border-bottom: 2px solid #000000;
+}
+
 ul.opcion {
-    margin-left: -130%;
+    margin-left: -97%;
 }
 
 .opcion li{
     line-height: 180%;
+    margin-bottom: 2em;
 }
 
 .opcion input[name="opcion"] {
     position: absolute;
-    left: -1000em;
+    visibility: hidden;
 }
 
-.opcion label::before {
+.label_opcion {
+    font-size: 25px;
+}
+
+.contenido_label_opcion {
+    border-bottom: 2px solid black;
+}
+
+.opcion .label_opcion::before {
     content:"\025b8";
     margin-right: 4px;
 }
 
-.opcion input:checked ~ label:before {
+.opcion input:checked ~ .label_opcion:before {
     content:"\025be";
 }
 
 .opcion .interior {
+    padding-top: 2em;
     margin-left: 65%;
     display: none;
+    justify-content: center;
+    align-content: center;
 }
 
-.opcion input:checked ~ ul {
-    display: block;
+.opcion input:checked ~ .interior {
+    display: flex;
 }

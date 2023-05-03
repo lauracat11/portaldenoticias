@@ -27,20 +27,22 @@ function ProfilePage() {
     }
 
     return (
-      
-        <div className='container'>
-            <div className='tabs'>
-                {tabs.map((tab, i) =>
-                    <button className='btn_tab_perfil' key={i} id={tab.id} disabled={Tab === `${tab.id}`} onClick={(triggerTabClick)}>{tab.tabTitle}</button>
-                )}
-            </div>
-
-            <div className='content'>
+    
+        <div className='body_perfil'>
+            <div className='container'>
+                <div className='tabs'>
                     {tabs.map((tab, i) =>
-                        <div>
-                            {Tab === `${tab.id}` && <div><p>{tab.content}</p></div>}
-                        </div>
+                        <button className='btn_tab_perfil' key={i} id={tab.id} disabled={Tab === `${tab.id}`} onClick={(triggerTabClick)}>{tab.tabTitle}</button>
                     )}
+                </div>
+
+                <div className='content'>
+                        {tabs.map((tab, i) =>
+                            <div>
+                                {Tab === `${tab.id}` && <div><p>{tab.content}</p></div>}
+                            </div>
+                        )}
+                </div>
             </div>
         </div>
       
