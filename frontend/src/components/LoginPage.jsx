@@ -47,10 +47,10 @@ function MainLoginPage() {
       })
     })
       .then(data => data.json())
-      console.log(response);
+    console.log(response);
   }
   return (
-
+<>
     <div class="body">
       <div className={isActive ? 'right-panel-active container_principal' : 'container_principal'} id="container">
         <div class="form-container register-container">
@@ -74,7 +74,7 @@ function MainLoginPage() {
           <form className='formulario' onSubmit={loginUser}>
             <h1 className='h1a'>Iniciar sesion</h1>
 
-            <input className='input_login' type="text" placeholder="Correo" required value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)}/>
+            <input className='input_login' type="text" placeholder="Correo" required value={emailLogin} onChange={(e) => setEmailLogin(e.target.value)} />
 
             <input className='input_login' type="password" placeholder="Contraseña" required value={pwsLogin} onChange={(e) => setPwsLogin(e.target.value)} />
 
@@ -101,7 +101,7 @@ function MainLoginPage() {
       </div>
     </div>
 
-
+    </>
   )
 }
 

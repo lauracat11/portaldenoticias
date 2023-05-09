@@ -13,16 +13,16 @@ class UsuarioController extends Controller
 
         // return $request->correo;
         $user = Usuario::select('*')->where('correo', $request->correo)->get();
-        $password = Usuario::select('contraseña')->where('correo', $request->correo)->get();
+        // $password = Usuario::select('contraseña')->where('correo', $request->correo)->get();
         
-        // return $request->contraseña;
-        return $password->contraseña;
+        return $user;
+        // return $password->contraseña;
 
-        if($password == $request->contraseña){
-            return $user;
-        }else{
-            return response()->json(["message" => "Contraseña incorrecta"]);
-        }
+        // if($password == $request->contraseña){
+        //     return $user;
+        // }else{
+        //     return response()->json(["message" => "Contraseña incorrecta"]);
+        // }
     
     }
 
