@@ -7,6 +7,7 @@ import About from '../src/pages/About'
 import Home from '../src/pages/Home'
 import Login from '../src/pages/Login'
 import Profile from '../src/pages/Profile'
+import Comentarios from './components/ComentariosNoticia'
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path='/about' exact element={<About/>}/>
         <Route path='/login' exact element={<Login/>}/>
         <Route path='/Profile' exact element={<Profile/>}/>
+        <Route path='/comentarios' exact element={<Comentarios/>}/>
+
 
       </Routes>
     </Router>
