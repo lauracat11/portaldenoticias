@@ -45,9 +45,38 @@ function Home() {
       });
       setImpNews(Arr1);
       setSecNews(Arr2);
-      console.log(SecNews);
     });
   }, [news]);
+ 
+  const victorString = (stringDesc) =>
+  {
+    var newStr = ""
+    var i = 0
+    stringDesc = stringDesc.split("")
+    while(i<stringDesc.length)
+    {
+      var j=i-4
+      
+      if(stringDesc[i] == "<")
+      { 
+        while(j<stringDesc.length)
+        {
+          
+          if(stringDesc[j] == ">")
+          {
+
+            j = stringDesc.length
+            
+          }
+          i = i+1
+          j = j+1
+        }
+      }
+      newStr = newStr + stringDesc[i]
+      i = i+1
+    }
+    return newStr
+  }
 
   return (
     <>
@@ -92,16 +121,15 @@ function Home() {
                       <h5 className="font-bold text-ls mb-7" style={{height:"8vh"}}>{Noticia.title}</h5>
                       <p className="text-gray-500 mb-4">
                         <small>
-                          Publicado en <u>{Noticia.publishedAt}</u> por 
-                          <p href="" className="text-gray-900">
-                            {Noticia.author == null ? "Anónimo" : Noticia.author}
+                          Publicado en <u className="text-gray-900">{Noticia.publishedAt}</u> <br></br>
+                
+                          escrito por : <u className="text-gray-900">{Noticia.author == null ? "Anónimo" : Noticia.author}</u> <br></br>
                             
-                          </p>
-                          Fuente: {Noticia.source.name}
+                          Fuente : <u className="text-gray-900">{Noticia.source.name}</u>
                         </small>
                       </p>
                       <p className="mb-4 pb-2 overflow-hidden" style={{height:"10vh"}}>
-                        {Noticia.description}
+                        {Noticia.description == null ? "Esta noticia no contiene descripción" : victorString(Noticia.description)}
                       </p>
                       <Link
                         to={Noticia.url}
