@@ -121,9 +121,9 @@ function Home() {
                       <h5 className="font-bold text-ls mb-7" style={{height:"8vh"}}>{Noticia.title}</h5>
                       <p className="text-gray-500 mb-4">
                         <small>
-                          Publicado en <u className="text-gray-900">{Noticia.publishedAt}</u> <br></br>
+                          Publicado en : <u className="text-gray-900">{Noticia.publishedAt}</u> <br></br>
                 
-                          escrito por : <u className="text-gray-900">{Noticia.author == null ? "Anónimo" : Noticia.author}</u> <br></br>
+                          Escrito por : <u className="text-gray-900">{Noticia.author == null ? "Anónimo" : Noticia.author}</u> <br></br>
                             
                           Fuente : <u className="text-gray-900">{Noticia.source.name}</u>
                         </small>
