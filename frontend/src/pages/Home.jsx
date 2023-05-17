@@ -15,8 +15,11 @@ function Home() {
   const [SecNews, setSecNews] = useState([]);
   const [VisibilidadModal, setVisibilidadModal] = useState(false);
   const [newTitle, setnewTitle] = useState("");
+  const [newURL, setNewURL] = useState(false);
   const [newImage, setnewImage] = useState("");
   const [newAuthor, setnewAuthor] = useState("");
+  const [favArr, setfavArr] = useState([])
+  const [favNews, setfavNews] = useState([])
 
   const setAttributes = (title, urlImage, author) => {
     setnewTitle(title);
@@ -35,18 +38,50 @@ function Home() {
     return noticia;
   }
 
+  const handlerFav = (newUrl,urlObj) => 
+  {
+    if(favArr.indexOf(newUrl) != -1)
+    {
+      favArr.splice(favArr.indexOf(newUrl), 1)
+      favNews.splice(favArr.indexOf(newUrl), 1)
+    } else {
+      setfavArr([...favArr, newUrl]);
+      setfavNews([...favNews, urlObj]);
+    }
+    setNewURL(true);
+  }
+
+  useEffect(() => {
+    if (newURL) {
+    localStorage.setItem("urlNews",JSON.stringify(favArr))
+    localStorage.setItem("favNews",JSON.stringify(favNews))
+    console.log(favArr)
+    setNewURL(false)
+    }
+    
+  }, [newURL])
+  
+
   useEffect(() => {
     SetNews().then((data) => {
       const Arr1 = [];
-      const Arr2 = [];
-
       data.forEach((element, key) => {
           Arr1.push(element);
       });
       setImpNews(Arr1);
-      setSecNews(Arr2);
     });
   }, [news]);
+
+  useEffect(() => {
+      if(localStorage.getItem("urlNews"))
+      {
+        setfavArr(JSON.parse(localStorage.getItem("urlNews")))
+      }
+      if(localStorage.getItem("favNews"))
+      {
+        setfavNews(JSON.parse(localStorage.getItem("favNews")))
+      }
+  }, []);
  
   const victorString = (stringDesc) =>
   {
@@ -140,6 +175,9 @@ function Home() {
                       >
                         LEER MÁS
                       </Link>
+                      <button onClick={() =>{
+                        handlerFav(Noticia.url,Noticia)
+                      }} type="button" class={favArr.indexOf(Noticia.url) != -1 ? "text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" : "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"}>Red</button>
                     </div>
                   </div>
                 </div>
