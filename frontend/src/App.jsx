@@ -7,6 +7,7 @@ import About from '../src/pages/About'
 import Home from '../src/pages/Home'
 import Login from '../src/pages/Login'
 import Profile from '../src/pages/Profile'
+import Newsletter from './components/NewsletterContent'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <>
     <Router>
       <Topnav/>
+      <Newsletter/>
       <Routes>
         <Route path="/" element={<Navigate to="/about" replace={true} />}/>
         <Route path="*" element={<Navigate to="/" replace={true} />} />
@@ -22,6 +24,8 @@ function App() {
         <Route path='/about' exact element={<About/>}/>
         <Route path='/login' exact element={<Login/>}/>
         <Route path='/Profile' exact element={<Profile/>}/>
+        {/* <Route path='/Newsletter' exact element={<Newsletter/>}/> */}
+
 
       </Routes>
     </Router>
