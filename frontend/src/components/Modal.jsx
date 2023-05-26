@@ -6,12 +6,12 @@ function Modal({children, VisibilidadModal,setVisibilidadModal,title}) {
     <>
         {VisibilidadModal && 
         <Overlay>
-            <ContenedorModal className='text-[#f2f2f2]'>
+            <ContenedorModal className='text-[#000000]'>
 
                 <Encabezado>
-                    <h2 className='text-[#f2f2f2]'>{title}</h2>
+                    <h2 className='text-[#000000]'>{title}</h2>
                 </Encabezado>
-                <CerrarModal onClick={() => setVisibilidadModal(false)}><TfiClose size={20}/></CerrarModal>
+                <CerrarModal onClick={() => setVisibilidadModal(false)}><TfiClose size={20} color='black'/></CerrarModal>
                 {children}
 
             </ContenedorModal>
@@ -37,11 +37,12 @@ const Overlay = styled.div`
 `;
 
 const ContenedorModal = styled.div`
-   width: 500px;
-   min-height: 100px;
-   background : #091428;
+   width: 80vw;
+   min-height: 90vh;
+   color: black;
+   background : #F2F2F2;
    position: relative;
-   border-radius: 2.5px;
+   border-radius: 20px;
    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
    padding: 20px;
 `;
@@ -52,7 +53,7 @@ const Encabezado = styled.div`
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #000000;
 
 `;
 
