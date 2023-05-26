@@ -9,6 +9,10 @@ import {
   Link,
 } from "react-router-dom";
 import Modal from "../components/Modal";
+import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
+
+
+
 function Home() {
   const { news, setnews, API_KEY } = useContext(contextNews);
   const [ImpNews, setImpNews] = useState([]);
@@ -121,12 +125,17 @@ function Home() {
         <div
           className="mx-5"
         >
+
           <h2
-            className="font-bold pb-10 pt-3 text-center"
+            className="font-bold pb-10 pt-2 text-center"
             style={{ fontSize: "1.5vw" }}
           >
             Noticias Principales
+          <div onClick={() => setVisibilidadModal(true)}
+          style={{width: "2vw"}} className={"cursor-pointer mr-auto ml-auto pt-2 px-2"}><AiFillHeart style={{width: "1.2vw"}}/></div>
           </h2>
+       
+          
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 xl:grid-cols-4 ">
             {ImpNews?.map((Noticia, key) => (
               <div key={key} className="mb-7">
@@ -166,18 +175,23 @@ function Home() {
                       <p className="mb-4 pb-2 overflow-hidden" style={{height:"10vh"}}>
                         {Noticia.description == null ? "Esta noticia no contiene descripción" : victorString(Noticia.description)}
                       </p>
-                      <Link
-                        to={Noticia.url}
-                        target="_blank"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                        class="inline-block px-6 py-2.5 bg-[#F25151] text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-[#9b3333] hover:shadow-lg focus:bg-[#9b3333] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#e96464] active:shadow-lg transition duration-150 ease-in-out"
-                      >
-                        LEER MÁS
-                      </Link>
-                      <button onClick={() =>{
-                        handlerFav(Noticia.url,Noticia)
-                      }} type="button" class={favArr.indexOf(Noticia.url) != -1 ? "text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" : "text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"}>Red</button>
+                      <div className="grid grid-cols-2">
+                        <div><Link
+                          to={Noticia.url}
+                          target="_blank"
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="light"
+                          class="inline-block px-6 py-2.5 bg-[#F25151] text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-[#9b3333] hover:shadow-lg focus:bg-[#9b3333] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#e96464] active:shadow-lg transition duration-150 ease-in-out"
+                        >
+                          LEER MÁS
+                        </Link></div>
+                        <div className="ml-auto"><button onClick={() =>{
+                          handlerFav(Noticia.url,Noticia)
+                        }} type="button">{favArr.indexOf(Noticia.url) != -1 ? <AiFillHeart size={"35"} color="red"></AiFillHeart>: <AiOutlineHeart size={"35"}></AiOutlineHeart>}</button></div>
+                      </div>
+                    
+                      
+              
                     </div>
                   </div>
                 </div>
@@ -189,13 +203,37 @@ function Home() {
       <Modal
         VisibilidadModal={VisibilidadModal}
         setVisibilidadModal={setVisibilidadModal}
-        title="Rol de los campeones"
+        title="Tus Noticias Favoritas"
       >
-        {/* <div style={{display: "grid", gridTemplateColumns:"repeat(2,1fr)"}}> */}
-        <img src={newImage} className="w-full" alt="Louvre" />
-        <div className="mt-4 flex flex-col gap-4 relative">{newTitle}</div>
-        <p>{newAuthor}</p>
-        {/* </div> */}
+        <div class="grid lg:grid-cols-4 gap-6">
+        {favNews?.map((Noticia, key) => (
+          <div class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg"
+            style={{backgroundPosition:"50%"}} data-mdb-ripple="true" data-mdb-ripple-color="light">
+            <img style={{height:"25vh"}}
+            src={Noticia.urlToImage == null ? "https://media.npr.org/assets/img/2022/08/25/trh_incognito_artwork_wide-98bd003daa0a817e661cb600cbdb44b26b0c718c-s1100-c50.jpg" : Noticia.urlToImage}
+            className="w-full"
+            />
+            <Link to={Noticia.url}>
+              <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+                style={{backgroundColor:"rgba(0, 0, 0, 0.4)"}}>
+                <div class="flex justify-start items-end h-full">
+                  <div class="text-white m-6">
+                    <p>
+                    <small>
+                          Publicado en : <u className="text-white">{Noticia.publishedAt}</u> <br></br>
+                
+                          Escrito por : <u className="text-white">{Noticia.author == null ? "Anónimo" : Noticia.author}</u> <br></br>
+                            
+                          Fuente : <u className="text-white">{Noticia.source.name}</u>
+                        </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+        </div>
       </Modal>
     </>
   );
