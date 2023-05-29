@@ -23,7 +23,7 @@ function NewsletterContent() {
               </div>
               <div className='text-center text-xl text-white'>Newsletter</div>
             </div>
-            <div className=' w-[30rem] space-y-8 border-2 pl-10 pr-10 grid-rows-2'>
+            <div className='bg-white w-[30rem] space-y-8 border-2 pl-10 pr-10 grid-rows-2'>
               <button className='ml-[26rem]' onClick={toggleModal}>X</button>
               <div className='text-center text-xl'>Suscibete a nuestro newsletter</div>
               <div className='text-justify'>Suscribete a nuestro Newsletter para no merderte nada de lo que pasa en el mundo</div>
