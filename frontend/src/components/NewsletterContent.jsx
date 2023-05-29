@@ -15,9 +15,9 @@ function NewsletterContent() {
   return (
     <>
       {modal && (
-        <div className=''>
+        <div className='fixed z-10 ml-[25%]'>
           <div className='flex justify-center relative pt-5 h-[30rem]'>
-            <div className='w-1/6 bg-[#2B252E]'>
+            <div className='w-2/6 bg-[#2B252E]'>
               <div className='flex justify-center'>
                 <img src={img} alt="" />
               </div>
